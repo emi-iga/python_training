@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form method="POST" action="">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Data Type</th>
+        <th>Display Name</th>
+    </thead>
+    <tbody>
+    {% for column in columns %}
+
+        <tr>
+          <td>{{column[0]}}</td>
+          <td>
+              <select class="form-control" name="data_type_{{loop.index}}">
+                <option>INT</option>
+                <option>VARCHAR</option>
+              </select>
+          </td>
+          <td>
+            <input type="text" class="form-control" name="display_name" value="{{column[0]}}">
+          </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <input class="btn btn-info pull-right" type="submit" value="submit">
+</form>
+{{test}}
+{% endblock %}
