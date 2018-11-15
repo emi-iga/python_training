@@ -1,35 +1,35 @@
-version: '3'
-networks:
-  backend:
-    driver: bridge
-services:
-  web:
-    build: ./web
-    depends_on:
-      - mysql
-    links:
-      - mysql:mysql
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./web:/usr/src/app
-    networks:
-      - backend
-  mysql:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: trdpython
-    volumes:
-      - "./mysql/my.conf:/etc/mysql/conf.d/config-file.cnf"
-      - "./data/trdpython/mysql:/var/lib/mysql:rw"
-    ports:
-      - "3308:3306"
-    networks:
-      - backend
-  adminer:
-    image: adminer
-    ports:
-      - "8080:8080"
-    networks:
-      - backend
+#version: '3'
+#networks:
+#  backend:
+#    driver: bridge
+#services:
+#  web:
+#    build: ./web
+#    depends_on:
+#      - mysql
+#    links:
+#      - mysql:mysql
+#    ports:
+#      - "5000:5000"
+#    volumes:
+#      - ./web:/usr/src/app
+#    networks:
+#      - backend
+#  mysql:
+#    image: mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: password
+#      MYSQL_DATABASE: trdpython
+#    volumes:
+#      - "./mysql/my.conf:/etc/mysql/conf.d/config-file.cnf"
+#      - "./data/trdpython/mysql:/var/lib/mysql:rw"
+#    ports:
+#      - "3308:3306"
+#    networks:
+#      - backend
+#  adminer:
+#    image: adminer
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - backend

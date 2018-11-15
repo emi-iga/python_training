@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{table}}</h1>
+<a type="button" class="btn btn-success">Add</a>
+<table class="table">
+    <thead>
+    <tr>
+    {% for column in columns %}
+        <th>{{column[0]}}</th>
+    {% endfor %}
+        <th class="text-right">BREAD Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for row in rows %}
+        <tr>
+            {% for item in row %}
+          <td>{{item}}</td>
+            {% endfor %}
+          <td class="text-right">
+            <a type="button" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+            <a type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+          </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{{rows[1]}}
+{% endblock %}
