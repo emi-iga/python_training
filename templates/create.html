@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div>
+        <h3>Create New Table</h3>
+        <button class="btn btn-info btn-sm" onclick="addSampleRow('table_create')">Add</button>
+        <button class="btn btn-danger btn-sm" onclick="removeSampleRow('table_create')">Delete</button>
+        <form method="POST" action="">
+            <table class="table" id="table_create">
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th>Column Name</th>
+                        <th>Data Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <input class="btn btn-primary float-right" type="submit" value="submit">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div>
+        <h1>Bread</h1>
+        <a href="/bread/create" class="btn btn-primary btn-sm mb-2">Add New Table</a>
+        <table class="table">
+            <tr>
+                <th>Table Name</th>
+                <th class="text-right">Actions</th>
+            </tr>
+            {% for table in tables %}
+            <tr>
+                <td>{{table[0]}}</td>
+                <td class="text-right">
+                    <a href="/bread/browse/{{table[0]}}" class="btn btn-info btn-sm">Browse</a>
+                    <a class="btn btn-warning btn-sm">Edit</a>
+                    <a class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
